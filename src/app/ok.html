@@ -1,0 +1,22 @@
+<ng-template #showLogin>
+  <section class="d-flex vh-100 align-items-center">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 offset-sm-3 text-center">
+          <h1>Ayush Front-End Challenge</h1>
+          <p>
+            Hi, my name is Chigozie Orunta and here's a demo of my front-end
+            assignment given to me by Ayush...
+          </p>
+          <button class="btn btn-danger btn-google" (click)="login()">
+            Login with <strong>Google</strong>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-template>
+
+<div *ngIf="auth.user | async as user; else showLogin"></div>
+
+{{ user.displayName }}
